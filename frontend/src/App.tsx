@@ -19,6 +19,7 @@ function App() {
 
   return (
     <BrowserRouter basename="app">
+      <Navbar />
       <nav className="p-4 flex space-x-4">
         <Link to="/">Home</Link>
         <Link to="/settings">Settings</Link>
@@ -32,12 +33,59 @@ function App() {
   )
 }
 
+function Navbar() {
+  return (
+    <div className="bg-black/30 backdrop-blur text-gray-200 sticky top-0">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="relative flex items-center h-16">
+          <div className="w-10 mr-2"></div>
+          <div>
+            <div className="text-lg font-bold">Zen Tang</div>
+            <div className="text-sm text-gray-500">147 tweets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Tweet() {
+  return (
+    <div className="p-2">
+      <div className="flex space-x-2">
+        <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+        <div>
+          <div className="text-lg font-bold">Zen Tang</div>
+          <div className="text-sm text-gray-500">@zentang</div>
+        </div>
+      </div>
+      <div className="my-2">
+        There's a saying in Fintech: You either die a consumer goods company, or
+        live long enough to see yourself enter financial services. One company
+        has managed to do both. Let me tell you why Starbucks is one of the most
+        successful banks in the U.S.:
+      </div>
+      <div className="text-sm text-gray-500">
+        1h · Blue for iPhone · 2/17/23
+      </div>
+      <div className="flex space-x-4">
+        <div className="flex space-x-2">Likes</div>
+        <div className="flex space-x-2">Comments</div>
+        <div className="flex space-x-2">Remix</div>
+      </div>
+    </div>
+  )
+}
+
 function HomePage() {
   return (
-    <div className="p-4">
-      <h1>React TS Home</h1>
-      <p>Welcome to the homepage</p>
-    </div>
+    <>
+      {Array(10)
+        .fill(100)
+        .map((x) => (
+          <Tweet />
+        ))}
+    </>
   )
 }
 
