@@ -19,9 +19,9 @@ function App() {
 
   return (
     <BrowserRouter basename="app">
-      <nav style={style}>
+      <nav className="p-4 flex space-x-4">
         <Link to="/">Home</Link>
-        <Link to="/settings">Settings f</Link>
+        <Link to="/settings">Settings</Link>
         <br />
       </nav>
       <Routes>
@@ -32,13 +32,22 @@ function App() {
   )
 }
 
+function HomePage() {
+  return (
+    <div className="p-4">
+      <h1>React TS Home</h1>
+      <p>Welcome to the homepage</p>
+    </div>
+  )
+}
+
 function SettingsPage() {
   const [messages, setMessages] = useState([])
   const addMessage = (message) => setMessages((x) => [...x, message])
 
   return (
-    <div>
-      <h1>Better Settings Page</h1>
+    <div className="p-4">
+      <h1 className="text-3xl font-bold text-yellow-200">Hello world!</h1>
       <button
         onClick={() => {
           fetchstuff().then((x) => {
@@ -58,13 +67,4 @@ function SettingsPage() {
   )
 }
 
-function HomePage() {
-  const style = { padding: "8px" }
-  return (
-    <div style={style}>
-      <h1>React TS Home</h1>
-      <p>Welcome to the homepage</p>
-    </div>
-  )
-}
 export default App
