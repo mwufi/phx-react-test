@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter basename="app">
       <nav style={style}>
         <Link to="/">Home</Link>
-        <Link to="/settings">Settings Page</Link>
+        <Link to="/settings">Settings f</Link>
         <br />
       </nav>
       <Routes>

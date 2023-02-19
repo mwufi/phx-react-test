@@ -53,11 +53,10 @@ COPY lib lib
 
 COPY assets assets
 
+COPY frontend frontend
+
 # compile assets
 RUN mix assets.deploy
-
-# Create our React frontend
-RUN mix webapp
 
 # Compile the release
 RUN mix compile
